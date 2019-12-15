@@ -76,6 +76,8 @@ public class ProductoController {
 			if(result.hasErrors())
 			{
 				model.addAttribute("tittle","Error al Guardar");
+				List<Proveedor> proveedores = srvProveedor.findAll();
+		        model.addAttribute("proveedores", proveedores);  
 				return"producto/form";
 			}
 			service.save(producto);
